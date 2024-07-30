@@ -17,7 +17,7 @@ Experience MediQuery in action:
 - **Live Chatbot Link:** [MediQuery Live](https://web-chat.global.assistant.watson.appdomain.cloud/preview.html?backgroundImageURL=https%3A%2F%2Fau-syd.assistant.watson.cloud.ibm.com%2Fpublic%2Fimages%2Fupx-261a7e63-4807-4776-8563-d6562c125f1a%3A%3A2a9fb6d4-e30b-4baf-8f5f-6f8983cc75f8&integrationID=749351fa-7ac1-4561-a220-366ce4211e4f&region=au-syd&serviceInstanceID=261a7e63-4807-4776-8563-d6562c125f1a)
 
 ## How to Use
-1. **Visit the Live Chatbot Link:** Click on the [MediQuery Live](http://your-live-chatbot-link.com) link to access the chatbot.
+1. **Visit the Live Chatbot Link:** Click on the [MediQuery Live](https://web-chat.global.assistant.watson.appdomain.cloud/preview.html?backgroundImageURL=https%3A%2F%2Fau-syd.assistant.watson.cloud.ibm.com%2Fpublic%2Fimages%2Fupx-261a7e63-4807-4776-8563-d6562c125f1a%3A%3A2a9fb6d4-e30b-4baf-8f5f-6f8983cc75f8&integrationID=749351fa-7ac1-4561-a220-366ce4211e4f&region=au-syd&serviceInstanceID=261a7e63-4807-4776-8563-d6562c125f1a) link to access the chatbot.
 2. **Start a Conversation:** Type your query related to hospital services, details, or appointments into the chat interface.
 3. **Receive Information:** MediQuery will process your query and provide relevant information or direct you to the appropriate department or service.
 
