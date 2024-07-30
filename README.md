@@ -24,8 +24,6 @@ Experience MediQuery in action:
 <br>
 <br>
 ![Chatbot Image 1](https://github.com/user-attachments/assets/a03dc9b0-ba56-4188-a269-841bb93e0d70)
-<br>
-<br>
 ![Chatbot Image 2](https://github.com/user-attachments/assets/1b8d3a82-45cb-44a8-af05-74a250504fd5)
 
 ## Usage
