@@ -1,0 +1,5777 @@
+{
+  "name": "MediBooker-action",
+  "type": "action",
+  "counts": {
+    "actions": 28,
+    "intents": 25,
+    "entities": 13,
+    "data_types": 0,
+    "collections": 0,
+    "global_variables": 0
+  },
+  "status": "Available",
+  "language": "en",
+  "skill_id": "21870654-730f-4724-a32c-17d2fe2b1eec",
+  "workspace": {
+    "actions": [
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "digression_failure",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't confirm if you wanted to return to previous topic, let me connect to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Topic return failed",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "It seems this conversation would be best managed",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanity - It seems this conversation",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi, Welcome to Grishma Health Care 🏥❤️‍🩹"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "Hi, Welcome to Grishma Health Care 🏥❤️‍🩹",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_19587",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_279",
+            "output": {
+              "generic": [
+                {
+                  "time": 0,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi, Welcome to Grishma Health Care 🏥🩺"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_279",
+            "next_step": "step_620"
+          },
+          {
+            "step": "step_620",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Would you like to book an appointment with our expert doctors?🧑‍⚕️"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_620",
+            "next_step": "step_986"
+          },
+          {
+            "step": "step_986",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thank you for visiting! If you have any queries or need further assistance, feel free to ask me."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_986",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_620"
+                },
+                {
+                  "scalar": "no"
+                }
+              ]
+            },
+            "next_step": "step_896"
+          },
+          {
+            "step": "step_896",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Which area are you looking for the Hospital in?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Hyderabad",
+                      "value": {
+                        "input": {
+                          "text": "Hyderabad"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Chennai",
+                      "value": {
+                        "input": {
+                          "text": "Chennai"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Vijayawada",
+                      "value": {
+                        "input": {
+                          "text": "Vijayawada"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Vishakapatnam",
+                      "value": {
+                        "input": {
+                          "text": "Vishakapatnam"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_41474",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_896",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_620"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_193"
+          },
+          {
+            "step": "step_193",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You are looking for a doctor in which department?🩺"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "General Medicine",
+                      "value": {
+                        "input": {
+                          "text": "General Medicine"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Emergency Medicine",
+                      "value": {
+                        "input": {
+                          "text": "Emergency Medicine"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dermatology",
+                      "value": {
+                        "input": {
+                          "text": "Dermatology"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Cardiology",
+                      "value": {
+                        "input": {
+                          "text": "Cardiology"
+                        }
+                      }
+                    },
+                    {
+                      "label": "ENT (Ear, Nose, and Throat)",
+                      "value": {
+                        "input": {
+                          "text": "ENT (Ear, Nose, and Throat)"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Gynecology",
+                      "value": {
+                        "input": {
+                          "text": "Gynecology"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Orthopedics",
+                      "value": {
+                        "input": {
+                          "text": "Orthopedics"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_30538",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_193",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_620"
+                },
+                {
+                  "scalar": "yes"
+                }
+              ]
+            },
+            "next_step": "step_410"
+          },
+          {
+            "step": "step_410",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here are the doctors in that department 👇\n\nPlease select the doctor you would like...."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Dr. K. K. Agarwal",
+                      "value": {
+                        "input": {
+                          "text": "Dr. K. K. Agarwal"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dr. V. Srinivas Reddy",
+                      "value": {
+                        "input": {
+                          "text": "Dr. V. Srinivas Reddy"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dr. Lavanya",
+                      "value": {
+                        "input": {
+                          "text": "Dr. Lavanya"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dr. Shashank Anand",
+                      "value": {
+                        "input": {
+                          "text": "Dr. Shashank Anand"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dr. V. Naga Lakshmi",
+                      "value": {
+                        "input": {
+                          "text": "Dr. V. Naga Lakshmi"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dr. P. Subbarao",
+                      "value": {
+                        "input": {
+                          "text": "Dr. P. Subbarao"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_2067",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_410",
+            "next_step": "step_597"
+          },
+          {
+            "step": "step_597",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Are you visiting for the first time, or is it a follow-up visit?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "First Visit",
+                      "value": {
+                        "input": {
+                          "text": "First Visit"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Follow-up visit",
+                      "value": {
+                        "input": {
+                          "text": "Follow-up visit"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_5451",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_597",
+            "next_step": "step_800"
+          },
+          {
+            "step": "step_800",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "When do you prefer to meet the doctor?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Next Available Slot",
+                      "value": {
+                        "input": {
+                          "text": "Next Available Slot"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Within Next 7 days",
+                      "value": {
+                        "input": {
+                          "text": "Within Next 7 days"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Within Next 15 days",
+                      "value": {
+                        "input": {
+                          "text": "Within Next 15 days"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_41754",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_800",
+            "next_step": "step_709"
+          },
+          {
+            "step": "step_709",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Got it. Let me take your information, and we are done"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_709",
+            "next_step": "step_950"
+          },
+          {
+            "step": "step_950",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Are you already registered with us?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes, I am!",
+                      "value": {
+                        "input": {
+                          "text": "Yes, I am!"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Nope, this is the first time",
+                      "value": {
+                        "input": {
+                          "text": "Nope, this is the first time"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_3605",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_950",
+            "next_step": "step_601"
+          },
+          {
+            "step": "step_601",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Enter your *MR Number below 👇*"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Enter a number."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_601",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_950"
+                },
+                {
+                  "value": "Yes, I am!",
+                  "from_entity": "entity_3605"
+                }
+              ]
+            },
+            "next_step": "step_127"
+          },
+          {
+            "step": "step_127",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "What is your full name?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_127",
+            "next_step": "step_283"
+          },
+          {
+            "step": "step_283",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please select your gender 👇"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Female",
+                      "value": {
+                        "input": {
+                          "text": "Female"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Male",
+                      "value": {
+                        "input": {
+                          "text": "Male"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Prefer Not to say",
+                      "value": {
+                        "input": {
+                          "text": "Prefer Not to say"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_6366",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_283",
+            "next_step": "step_806"
+          },
+          {
+            "step": "step_806",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "And what's your date of birth?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "response_type": "date",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-date",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_806",
+            "next_step": "step_502"
+          },
+          {
+            "step": "step_502",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Your mobile number?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Enter a number."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-number",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_502",
+            "next_step": "step_878"
+          },
+          {
+            "step": "step_878",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Finally, your email address?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_22140",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_878",
+            "next_step": "step_548"
+          },
+          {
+            "step": "step_548",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Congratulations! Your appointment has been successfully booked 👍"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_548",
+            "next_step": "step_382"
+          },
+          {
+            "step": "step_382",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thank you for your time,You will soon hear back from our team."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_382",
+            "next_step": "step_589"
+          },
+          {
+            "step": "step_589",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thank you for visiting! If you have any queries or need further assistance, feel free to ask me."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_589"
+          }
+        ],
+        "title": "How can I book an appointment?",
+        "action": "action_21056",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_21056_intent_45502"
+        },
+        "variables": [
+          {
+            "title": "What is your full name?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_127",
+            "data_type": "any"
+          },
+          {
+            "title": "You are looking for a doctor in which department?🩺",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_193",
+            "data_type": "any"
+          },
+          {
+            "title": "Hi, Welcome to Grishma Health Care 🏥🩺",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_279",
+            "data_type": "any"
+          },
+          {
+            "title": "Please select your gender 👇",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_283",
+            "data_type": "any"
+          },
+          {
+            "title": "Thank you for your time,You will soon hear back from our team.",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_382",
+            "data_type": "any"
+          },
+          {
+            "title": "Here are the doctors in that department 👇 Please select the doc",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_410",
+            "data_type": "any"
+          },
+          {
+            "title": "Your mobile number?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_502",
+            "data_type": "number"
+          },
+          {
+            "title": "Congratulations! Your appointment has been successfully booked ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_548",
+            "data_type": "any"
+          },
+          {
+            "title": "Thank you for visiting! If you have any queries or need further ",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_589",
+            "data_type": "any"
+          },
+          {
+            "title": "Are you visiting for the first time, or is it a follow-up visit?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_597",
+            "data_type": "any"
+          },
+          {
+            "title": "Enter your *MR Number below 👇*",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_601",
+            "data_type": "number"
+          },
+          {
+            "title": "Would you like to book an appointment with our expert doctors?🧑",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_620",
+            "data_type": "yes_no"
+          },
+          {
+            "title": "Got it. Let me take your information, and we are done",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_709",
+            "data_type": "any"
+          },
+          {
+            "title": "When do you prefer to meet the doctor?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_800",
+            "data_type": "any"
+          },
+          {
+            "title": "And what's your date of birth?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_806",
+            "data_type": "date"
+          },
+          {
+            "title": "Finally, your email address?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_878",
+            "data_type": "any"
+          },
+          {
+            "title": "Which area are you looking for the Hospital in?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_896",
+            "data_type": "any"
+          },
+          {
+            "title": "Are you already registered with us?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_950",
+            "data_type": "any"
+          },
+          {
+            "title": "Thank you for visiting! If you have any queries or need further ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_986",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_923",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital is open every day to accommodate the needs of our patients. We prioritize providing care and value to our patients, regardless of the time."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_923",
+            "next_step": "step_653"
+          },
+          {
+            "step": "step_653",
+            "output": {
+              "generic": [
+                {
+                  "time": 2000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any other questions or need assistance, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_653"
+          }
+        ],
+        "title": "What are the Hospital timings?",
+        "action": "action_12425",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_12425_intent_28079"
+        },
+        "variables": [
+          {
+            "title": "If you have any other questions or need assistance, feel free to",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_653",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital is open every day to accommodate the needs of our p",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_923",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_21056",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_855",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You can contact us by"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Phone :  (555) 123-4567,"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Email  [:]()  support@mediquery.com"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "or using the chat feature on our website."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_855",
+            "next_step": "step_323"
+          },
+          {
+            "step": "step_323",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any other questions or need assistance, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_323"
+          }
+        ],
+        "title": "How can I contact you?",
+        "action": "action_24235",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_24235_intent_38184"
+        },
+        "variables": [
+          {
+            "title": "If you have any other questions or need assistance, feel free to",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_323",
+            "data_type": "any"
+          },
+          {
+            "title": "You can contact us by",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_855",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_12425",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_244",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Yes, our hospital is fully equipped with comprehensive facilities and services. We have a diverse team of general practitioners and specialists, including emergency services, diagnostic services, outpatient and inpatient care, a pharmacy, lab, radiology department, surgical services, maternity care, pediatric care, physiotherapy, and mental health services."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_244",
+            "next_step": "step_106"
+          },
+          {
+            "step": "step_106",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any specific questions or need more details, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_106"
+          }
+        ],
+        "title": "Do you have all the facilities?",
+        "action": "action_4188",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_4188_intent_3224"
+        },
+        "variables": [
+          {
+            "title": "If you have any specific questions or need more details, feel fr",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_106",
+            "data_type": "any"
+          },
+          {
+            "title": "Yes, our hospital is fully equipped with comprehensive facilitie",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_244",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_24235",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_247",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital has been serving the community for over 20 years, providing high-quality healthcare and comprehensive medical services."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_247",
+            "next_step": "step_305"
+          },
+          {
+            "step": "step_305",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any other questions or need further information, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_305"
+          }
+        ],
+        "title": "How many years has your hospital been around?",
+        "action": "action_22082",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_22082_intent_8301"
+        },
+        "variables": [
+          {
+            "title": "Our hospital has been serving the community for over 20 years, p",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_247",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have any other questions or need further information, fee",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_305",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_4188",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_417",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Yes, our hospital has a team of highly experienced doctors and specialists across various fields. We ensure that our patients receive expert consultations and top-quality care."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_417",
+            "next_step": "step_287"
+          },
+          {
+            "step": "step_287",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any specific questions or need further details, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_287"
+          }
+        ],
+        "title": "Do you have specialist doctors?",
+        "action": "action_7169",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_7169_intent_11013"
+        },
+        "variables": [
+          {
+            "title": "If you have any specific questions or need further details, feel",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_287",
+            "data_type": "any"
+          },
+          {
+            "title": "Yes, our hospital has a team of highly experienced doctors and s",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_417",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_22082",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_711",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital prioritizes cleanliness and hygiene. We have strict protocols in place to ensure that all areas are regularly cleaned and sanitized. Our staff is trained to maintain high standards of hygiene throughout the hospital."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_711",
+            "next_step": "step_498"
+          },
+          {
+            "step": "step_498",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any other questions, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_498"
+          }
+        ],
+        "title": "Is the hospital clean?",
+        "action": "action_39942",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_39942_intent_30691"
+        },
+        "variables": [
+          {
+            "title": "If you have any other questions, feel free to ask!",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_498",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital prioritizes cleanliness and hygiene. We have strict",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_711",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_7169",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_206",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Yes, our hospital provides a variety of patient rooms, including private and shared options. We ensure that all rooms are clean, comfortable, and well-maintained. Housekeeping services are regularly provided to uphold high standards of cleanliness."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_206",
+            "next_step": "step_921"
+          },
+          {
+            "step": "step_921",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any other questions or need more information, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_921"
+          }
+        ],
+        "title": "Do you have patient rooms?",
+        "action": "action_8313",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_8313_intent_6442"
+        },
+        "variables": [
+          {
+            "title": "Yes, our hospital provides a variety of patient rooms, including",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_206",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have any other questions or need more information, feel f",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_921",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_39942",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_959",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital is well-equipped with a comprehensive range of medical resources. We have a fully stocked pharmacy with up-to-date medications, and our oxygen cylinders and other critical supplies are regularly checked and maintained to ensure they are in optimal condition. We are committed to providing high-quality care and ensuring that all our medical resources are available and reliable."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_959",
+            "next_step": "step_815"
+          },
+          {
+            "step": "step_815",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any further questions or need more details, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_815"
+          }
+        ],
+        "title": "Do you have a well-stocked pharmacy?",
+        "action": "action_41753",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_41753_intent_22057"
+        },
+        "variables": [
+          {
+            "title": "If you have any further questions or need more details, feel fre",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_815",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital is well-equipped with a comprehensive range of medi",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_959",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_8313",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_261",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital has a fully operational blood bank, where we maintain a diverse stock of blood types to meet patient needs. We ensure that all donated blood is thoroughly tested and safely stored. We regularly replenish our blood supply and follow stringent protocols to guarantee the safety and quality of blood donations."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_261",
+            "next_step": "step_814"
+          },
+          {
+            "step": "step_814",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any other questions or need more information, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_814"
+          }
+        ],
+        "title": "Do you have a blood bank?",
+        "action": "action_10497",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_10497_intent_26530"
+        },
+        "variables": [
+          {
+            "title": "Our hospital has a fully operational blood bank, where we mainta",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_261",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have any other questions or need more information, feel f",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_814",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_41753",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_327",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "To get admitted to our hospital, you can visit our admissions desk or contact us via our website or phone. There is no admission fee; our staff will assist you with the process and help you with any required paperwork, you can contact them."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_327",
+            "next_step": "step_329"
+          },
+          {
+            "step": "step_329",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any further questions or need assistance, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_329"
+          }
+        ],
+        "title": "admission details",
+        "action": "action_13697",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_13697_intent_12109"
+        },
+        "variables": [
+          {
+            "title": "To get admitted to our hospital, you can visit our admissions de",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_327",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have any further questions or need assistance, feel free ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_329",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_10497",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_316",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital provides mortuary services to assist with arrangements for deceased patients. We have a dedicated facility to handle these services with care and respect. There is no additional fee for using our mortuary services."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_316",
+            "next_step": "step_204"
+          },
+          {
+            "step": "step_204",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you need more information or assistance, please feel free to ask."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_204"
+          }
+        ],
+        "title": "Do you have a mortuary service?",
+        "action": "action_4020",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_4020_intent_22760"
+        },
+        "variables": [
+          {
+            "title": "If you need more information or assistance, please feel free to ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_204",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital provides mortuary services to assist with arrangeme",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_316",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_13697",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_906",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "For emergency services, you can contact our emergency department directly at [emergency contact number]. Our emergency services are available 24/7. The emergency department is located [provide location details if needed]. If you need immediate assistance or have any questions about emergency protocols, please don’t hesitate to reach out."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_906",
+            "next_step": "step_291"
+          },
+          {
+            "step": "step_291",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you need more information or assistance, please feel free to ask."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_291"
+          }
+        ],
+        "title": "What is your hospital's emergency contact number?",
+        "action": "action_37579",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_37579_intent_43051"
+        },
+        "variables": [
+          {
+            "title": "If you need more information or assistance, please feel free to ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_291",
+            "data_type": "any"
+          },
+          {
+            "title": "For emergency services, you can contact our emergency department",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_906",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_4020",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_318",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital is equipped with state-of-the-art facilities and provides a wide range of medical services. We offer specialties in areas such as cardiology, orthopedics, general medicine, pediatrics, gynecology, dermatology, and more. Our experienced team of specialists is dedicated to delivering high-quality care across these fields."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_318",
+            "next_step": "step_231"
+          },
+          {
+            "step": "step_231",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you need more information or have any specific questions, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_231"
+          }
+        ],
+        "title": "Can you tell me about your hospital?",
+        "action": "action_38974",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_38974_intent_27025"
+        },
+        "variables": [
+          {
+            "title": "If you need more information or have any specific questions, fee",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_231",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital is equipped with state-of-the-art facilities and pr",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_318",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_37579",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_987",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital is well-prepared for disaster situations with comprehensive emergency response plans and resources. We have specialized teams, robust infrastructure, and protocols in place to manage and respond to large-scale emergencies effectively. Our staff is trained to handle various disaster scenarios to ensure the safety and care of our patients."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_987",
+            "next_step": "step_224"
+          },
+          {
+            "step": "step_224",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any further questions or need more details, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_224"
+          }
+        ],
+        "title": "How prepared is your hospital for disasters?",
+        "action": "action_13490",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_13490_intent_41691"
+        },
+        "variables": [
+          {
+            "title": "If you have any further questions or need more details, feel fre",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_224",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital is well-prepared for disaster situations with compr",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_987",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_36864",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_563",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Thank you! I'm glad I could help."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Feel free to reach out anytime."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_563"
+          }
+        ],
+        "title": "Thanks, you helped me",
+        "action": "action_36864",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_36864_intent_27233"
+        },
+        "variables": [
+          {
+            "title": "Thank you! I'm glad I could help.",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_563",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_38974",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_865",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospital is reputable and committed to providing high-quality, authentic medicines and care. We adhere to strict standards and regulations to ensure that all treatments and medications are effective and reliable."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_865",
+            "next_step": "step_201"
+          },
+          {
+            "step": "step_201",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any concerns or need more information, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_201"
+          }
+        ],
+        "title": "Is your hospital reputable?",
+        "action": "action_22582",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_22582_intent_41629"
+        },
+        "variables": [
+          {
+            "title": "If you have any concerns or need more information, feel free to ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_201",
+            "data_type": "any"
+          },
+          {
+            "title": "Our hospital is reputable and committed to providing high-qualit",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_865",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_13490",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_454",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Our hospitals are located in Hyderabad at Apollo Hospitals, Jubilee Hills, and Care Hospitals, Banjara Hills. In Vijayawada, we have Prathima Hospitals and Aster Prime Hospital. In Vishakapatnam, visit King George Hospital or Apollo Hospitals, MVP Colony. In Chennai, find us at Fortis Malar Hospital, Adyar, and Apollo Hospitals, Greams Lane."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_454",
+            "next_step": "step_731"
+          },
+          {
+            "step": "step_731",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any further questions or need more details, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_731"
+          }
+        ],
+        "title": "Where is your hospital located?",
+        "action": "action_42220",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_42220_intent_10489"
+        },
+        "variables": [
+          {
+            "title": "Our hospitals are located in Hyderabad at Apollo Hospitals, Jubi",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_454",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have any further questions or need more details, feel fre",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_731",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_22582",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_107",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "As an AI, I don't have feelings, but I'm here and ready to help you with any questions or appointment bookings you have!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_107"
+          }
+        ],
+        "title": "How are you?",
+        "action": "action_11532",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_11532_intent_44788"
+        },
+        "variables": [
+          {
+            "title": "As an AI, I don't have feelings, but I'm here and ready to help ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_107",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_41626",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_316",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I'm MediQuery, the virtual assistant for hospital appointments and inquiries."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_316",
+            "next_step": "step_486"
+          },
+          {
+            "step": "step_486",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How can I assist you?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_486"
+          }
+        ],
+        "title": "Who are you?",
+        "action": "action_41626",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_41626_intent_26586"
+        },
+        "variables": [
+          {
+            "title": "I'm MediQuery, the virtual assistant for hospital appointments a",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_316",
+            "data_type": "any"
+          },
+          {
+            "title": "How can I assist you?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_486",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_42220",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_626",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The founder of our hospital is Dr. Grishma Gedela, who established it with a vision to provide top-quality healthcare to the community."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_626"
+          }
+        ],
+        "title": "Who is the founder of the hospital?",
+        "action": "action_19271",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_19271_intent_45428"
+        },
+        "variables": [
+          {
+            "title": "The founder of our hospital is Dr. Grishma Gedela, who establish",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_626",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_11532",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_928",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any quesions regarding your appointment details, You can find out by calling (555) 123-4567 and providing your registered information."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_928",
+            "next_step": "step_824"
+          },
+          {
+            "step": "step_824",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any further questions or need more details, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_824"
+          }
+        ],
+        "title": "When is my appointment?",
+        "action": "action_30215",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_30215_intent_4211"
+        },
+        "variables": [
+          {
+            "title": "If you have any further questions or need more details, feel fre",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_824",
+            "data_type": "any"
+          },
+          {
+            "title": "If you have any quesions regarding your appointment details, You",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_928",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_19271",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_712",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Yes, you can join or accompany a patient for their appointment even now."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_712",
+            "next_step": "step_140"
+          },
+          {
+            "step": "step_140",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "If you have any queries, feel free to ask!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_140"
+          }
+        ],
+        "title": "Can I join a patient this evening if I have an appointment booke",
+        "action": "action_5928",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_5928_intent_2736"
+        },
+        "variables": [
+          {
+            "title": "If you have any queries, feel free to ask!",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_140",
+            "data_type": "any"
+          },
+          {
+            "title": "Yes, you can join or accompany a patient for their appointment e",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_712",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_30215",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_265",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You can find the visitor guidelines on our hospital’s website under the 'Visitor Information' section. For any specific inquiries or to get more details, please contact our reception at (555) 123-4567 or [support@mediquery.com](mailto:support@mediquery.com). They will be happy to assist you with all the information you need."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_265"
+          }
+        ],
+        "title": "What are the hospital's rules and regulations?",
+        "action": "action_19587",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_19587_intent_45913"
+        },
+        "variables": [
+          {
+            "title": "You can find the visitor guidelines on our hospital’s website un",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_265",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_5928",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_39942_intent_30691",
+        "examples": [
+          {
+            "text": "How often is the hospital cleaned?"
+          },
+          {
+            "text": "Is the hospital clean?"
+          },
+          {
+            "text": "How do you maintain cleanliness in the hospital?"
+          },
+          {
+            "text": "What measures do you take for hospital hygiene?"
+          },
+          {
+            "text": "Are the hospital facilities well-maintained?"
+          }
+        ]
+      },
+      {
+        "intent": "action_24235_intent_38184",
+        "examples": [
+          {
+            "text": "How can I contact you?"
+          },
+          {
+            "text": "touch"
+          },
+          {
+            "text": "helpline"
+          },
+          {
+            "text": "reach out"
+          },
+          {
+            "text": "contact"
+          }
+        ]
+      },
+      {
+        "intent": "action_41753_intent_22057",
+        "examples": [
+          {
+            "text": "Do you have a well-stocked pharmacy?"
+          },
+          {
+            "text": "Do you have adequate medical equipment?"
+          },
+          {
+            "text": "Is your hospital equipped with necessary medical resources?"
+          },
+          {
+            "text": "Are your medical supplies regularly checked?"
+          },
+          {
+            "text": "Do you have oxygen cylinders available?"
+          },
+          {
+            "text": "Are your medicines up-to-date?"
+          },
+          {
+            "text": "How do you ensure the quality of your medical supplies?"
+          },
+          {
+            "text": "Are the oxygen cylinders in good condition?"
+          },
+          {
+            "text": "Do you provide essential medications?"
+          },
+          {
+            "text": "Are your medical resources sufficient for emergencies?"
+          }
+        ]
+      },
+      {
+        "intent": "action_5928_intent_2736",
+        "examples": [
+          {
+            "text": "Can I stay with a patient during their appointment tonight?"
+          },
+          {
+            "text": "Can I join a patient this evening if I have an appointment booked?"
+          },
+          {
+            "text": "Can I join a patient at their evening appointment without any issues?"
+          },
+          {
+            "text": "Can I accompany a patient who has an appointment booked for tonight?"
+          },
+          {
+            "text": "Are visitors allowed to accompany a patient for their appointment in the evening?"
+          },
+          {
+            "text": "Can I be with a patient at their appointment this evening?"
+          },
+          {
+            "text": "Is it possible to join a patient for their evening visit?"
+          },
+          {
+            "text": "Can I come with a patient to their scheduled appointment later today?"
+          },
+          {
+            "text": "Am I permitted to be with a patient who has an appointment this evening?"
+          },
+          {
+            "text": "Is it allowed for me to accompany a patient for their appointment today?"
+          }
+        ]
+      },
+      {
+        "intent": "action_38974_intent_27025",
+        "examples": [
+          {
+            "text": "What types of medical care are available at your hospital?"
+          },
+          {
+            "text": "Can you provide information about the expertise of your doctors?"
+          },
+          {
+            "text": "What are the unique services offered by your hospital?"
+          },
+          {
+            "text": "How many different specialties are available at your hospital?"
+          },
+          {
+            "text": "What kind of specialized care do you provide?"
+          },
+          {
+            "text": "What departments are available at your hospital?"
+          },
+          {
+            "text": "Can you describe the key features of your hospital?"
+          },
+          {
+            "text": "What are the main services provided by your hospital?"
+          },
+          {
+            "text": "What specialties does your hospital offer?"
+          },
+          {
+            "text": "Can you tell me about your hospital?"
+          }
+        ]
+      },
+      {
+        "intent": "action_7169_intent_11013",
+        "examples": [
+          {
+            "text": "Do you have experienced doctors?"
+          },
+          {
+            "text": "How many specialist doctors do you have?"
+          },
+          {
+            "text": "How many experienced doctors are on staff?"
+          },
+          {
+            "text": "Do you offer specialist consultations?"
+          },
+          {
+            "text": "Are your doctors experienced?"
+          },
+          {
+            "text": "Can I see a specialist at your hospital?"
+          },
+          {
+            "text": "Do you have experts in specific fields?"
+          },
+          {
+            "text": "How many experts are there in your hospital?"
+          },
+          {
+            "text": "Do you have specialist doctors?"
+          },
+          {
+            "text": "Are there any specialist doctors available?"
+          }
+        ]
+      },
+      {
+        "intent": "action_11532_intent_44788",
+        "examples": [
+          {
+            "text": "How are things with you?"
+          },
+          {
+            "text": "Are you doing well?"
+          },
+          {
+            "text": "How have you been?"
+          },
+          {
+            "text": "What's up?"
+          },
+          {
+            "text": "How do you feel today?"
+          },
+          {
+            "text": "How's it going?"
+          },
+          {
+            "text": "How are you doing?"
+          },
+          {
+            "text": "How are you?"
+          },
+          {
+            "text": "How are you today?"
+          },
+          {
+            "text": "How's your day going?"
+          }
+        ]
+      },
+      {
+        "intent": "action_19271_intent_45428",
+        "examples": [
+          {
+            "text": "Who is the originator of this hospital?"
+          },
+          {
+            "text": "Who is the founder?"
+          },
+          {
+            "text": "Who created this hospital?"
+          },
+          {
+            "text": "Who is the person behind this hospital?"
+          },
+          {
+            "text": "Who established this hospital?"
+          },
+          {
+            "text": "Can you tell me who founded this hospital?"
+          },
+          {
+            "text": "Who started this hospital?"
+          },
+          {
+            "text": "Who is the founder of the hospital?"
+          },
+          {
+            "text": "Who is the person that founded this hospital?"
+          },
+          {
+            "text": "Who is the hospital's founder?"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Call agent"
+          },
+          {
+            "text": "I would like to speak to someone"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "Agent help"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      },
+      {
+        "intent": "action_21056_intent_45502",
+        "examples": [
+          {
+            "text": "Hospital"
+          },
+          {
+            "text": "How can I get admitted to the hospital?"
+          },
+          {
+            "text": "namaskar"
+          },
+          {
+            "text": "medibot"
+          },
+          {
+            "text": "can you help me"
+          },
+          {
+            "text": "patient"
+          },
+          {
+            "text": "hola"
+          },
+          {
+            "text": "hiii"
+          },
+          {
+            "text": "good evening"
+          },
+          {
+            "text": "good morning"
+          },
+          {
+            "text": "good afternoon"
+          },
+          {
+            "text": "Hello"
+          },
+          {
+            "text": "Hi"
+          },
+          {
+            "text": "doctor"
+          },
+          {
+            "text": "hellooo"
+          },
+          {
+            "text": "how can i book an appointment"
+          },
+          {
+            "text": "appointment"
+          }
+        ]
+      },
+      {
+        "intent": "action_22582_intent_41629",
+        "examples": [
+          {
+            "text": "How do I know your hospital is trustworthy?"
+          },
+          {
+            "text": "Does your hospital provide genuine medicines?"
+          },
+          {
+            "text": "Is your hospital reputable?"
+          },
+          {
+            "text": "Is your hospital’s care and medication reliable?"
+          },
+          {
+            "text": "How do you ensure the quality of your medical supplies?"
+          },
+          {
+            "text": "Are there any concerns about the reliability of your hospital?"
+          },
+          {
+            "text": "Is your hospital known for good care and authentic medicines?"
+          },
+          {
+            "text": "Are the treatments and medications at your hospital effective?"
+          },
+          {
+            "text": "Can I trust the quality of medicines at your hospital?"
+          },
+          {
+            "text": "Are the services at your hospital reliable?"
+          }
+        ]
+      },
+      {
+        "intent": "action_30215_intent_4211",
+        "examples": [
+          {
+            "text": "How do I check if my appointment has been confirmed?"
+          },
+          {
+            "text": "When is my appointment?"
+          },
+          {
+            "text": "What is the date and time of my appointment?"
+          },
+          {
+            "text": "Can you tell me when my appointment is?"
+          },
+          {
+            "text": "I booked an appointment; when is it?"
+          },
+          {
+            "text": "When is my scheduled appointment?"
+          },
+          {
+            "text": "What time is my appointment?"
+          },
+          {
+            "text": "When should I come for my appointment?"
+          },
+          {
+            "text": "Can you provide the details of my appointment?"
+          },
+          {
+            "text": "When is my visit scheduled?"
+          },
+          {
+            "text": "When do I have to come for my appointment?"
+          },
+          {
+            "text": "I have booked"
+          },
+          {
+            "text": "How can I reschedule my appointment?"
+          },
+          {
+            "text": "Can I cancel my appointment?"
+          },
+          {
+            "text": "How can I update my contact information?"
+          },
+          {
+            "text": "What should I do if I miss my appointment?"
+          },
+          {
+            "text": "Is there a fee for rescheduling or canceling an appointment?"
+          },
+          {
+            "text": "cancel appointment"
+          },
+          {
+            "text": "cancel booking"
+          },
+          {
+            "text": "update details"
+          },
+          {
+            "text": "update appointment"
+          },
+          {
+            "text": "How far in advance do I need to cancel my appointment to avoid a fee?"
+          },
+          {
+            "text": "Can I book an appointment for someone else?"
+          },
+          {
+            "text": "How do I confirm my appointment date and time?"
+          },
+          {
+            "text": "How do I update my address in your system?"
+          },
+          {
+            "text": "How can I update my contact ?"
+          },
+          {
+            "text": "update contacts"
+          },
+          {
+            "text": "update phone number"
+          },
+          {
+            "text": "change my name"
+          },
+          {
+            "text": "change mail"
+          }
+        ]
+      },
+      {
+        "intent": "action_42220_intent_10489",
+        "examples": [
+          {
+            "text": "Where are your hospital offices situated?"
+          },
+          {
+            "text": "What are the different locations of your hospital?"
+          },
+          {
+            "text": "How do I find your hospital's location?"
+          },
+          {
+            "text": "Can you share the addresses of your facilities?"
+          },
+          {
+            "text": "Do you have multiple hospital locations?"
+          },
+          {
+            "text": "What is the address of your main hospital?"
+          },
+          {
+            "text": "Where can I find your hospital?"
+          },
+          {
+            "text": "What are the locations of your hospital branches?"
+          },
+          {
+            "text": "Can you provide the address of your hospital?"
+          },
+          {
+            "text": "Where is your hospital located?"
+          }
+        ]
+      },
+      {
+        "intent": "action_4188_intent_3224",
+        "examples": [
+          {
+            "text": "Do you have a pharmacy on-site?"
+          },
+          {
+            "text": "Do you have a lab for tests?"
+          },
+          {
+            "text": "Do you have a radiology department?"
+          },
+          {
+            "text": "fan"
+          },
+          {
+            "text": "air conditioner"
+          },
+          {
+            "text": "cooler"
+          },
+          {
+            "text": "Do you have all the facilities?"
+          },
+          {
+            "text": "Do you have all kinds of doctors?"
+          },
+          {
+            "text": "Do you have specialists?"
+          },
+          {
+            "text": "Do you offer emergency services?"
+          },
+          {
+            "text": "Do you provide diagnostic services?"
+          },
+          {
+            "text": "Do you have outpatient services?"
+          },
+          {
+            "text": "Do you offer inpatient services?"
+          },
+          {
+            "text": "Do you provide surgery services?"
+          },
+          {
+            "text": "Do you have maternity services?"
+          },
+          {
+            "text": "Do you offer pediatric care?"
+          },
+          {
+            "text": "Do you have physiotherapy services?"
+          },
+          {
+            "text": "Do you provide mental health services?"
+          },
+          {
+            "text": "Do you have ac?"
+          }
+        ]
+      },
+      {
+        "intent": "action_10497_intent_26530",
+        "examples": [
+          {
+            "text": "Do you offer blood transfusion services?"
+          },
+          {
+            "text": "Can I donate blood at your hospital?"
+          },
+          {
+            "text": "How often do you replenish your blood supply?"
+          },
+          {
+            "text": "Is the blood in your bank tested?"
+          },
+          {
+            "text": "Do you have a stock of different blood types?"
+          },
+          {
+            "text": "How do you manage blood donations?"
+          },
+          {
+            "text": "Is blood available at your hospital?"
+          },
+          {
+            "text": "Do you have a blood bank?"
+          },
+          {
+            "text": "Are blood donations safe at your hospital?"
+          },
+          {
+            "text": "How is blood stored and managed?"
+          }
+        ]
+      },
+      {
+        "intent": "action_22082_intent_8301",
+        "examples": [
+          {
+            "text": "When was your hospital established?"
+          },
+          {
+            "text": "Since when has your hospital been serving patients?"
+          },
+          {
+            "text": "How many years has your hospital been providing care?"
+          },
+          {
+            "text": "How long has your hospital been in business?"
+          },
+          {
+            "text": "What year was your hospital founded?"
+          },
+          {
+            "text": "How many years has your hospital been serving the community?"
+          },
+          {
+            "text": "For how many years has your hospital been open?"
+          },
+          {
+            "text": "How long has your hospital been in service?"
+          },
+          {
+            "text": "Since when has your hospital been operating?"
+          },
+          {
+            "text": "How many years has your hospital been around?"
+          }
+        ]
+      },
+      {
+        "intent": "action_13490_intent_41691",
+        "examples": [
+          {
+            "text": "How resilient is your hospital in disaster situations?"
+          },
+          {
+            "text": "Can your hospital manage large-scale emergencies?"
+          },
+          {
+            "text": "How prepared is your hospital for disasters?"
+          },
+          {
+            "text": "What kind of disaster readiness do you have?"
+          },
+          {
+            "text": "What disaster management resources do you have?"
+          },
+          {
+            "text": "How does your hospital handle emergency situations?"
+          },
+          {
+            "text": "Is your hospital equipped to handle disasters?"
+          },
+          {
+            "text": "What steps does your hospital take during a disaster?"
+          },
+          {
+            "text": "How strong is your hospital's disaster response?"
+          },
+          {
+            "text": "What is your hospital’s capacity for dealing with emergencies?"
+          }
+        ]
+      },
+      {
+        "intent": "action_8313_intent_6442",
+        "examples": [
+          {
+            "text": "beds"
+          },
+          {
+            "text": "Do you have luxury rooms?"
+          },
+          {
+            "text": "Do you have patient rooms?"
+          },
+          {
+            "text": "Are the rooms clean?"
+          },
+          {
+            "text": "How are the room facilities?"
+          },
+          {
+            "text": "Do you offer private rooms?"
+          },
+          {
+            "text": "Are there any shared rooms?"
+          },
+          {
+            "text": "What kind of rooms do you have for patients?"
+          },
+          {
+            "text": "Are the rooms comfortable?"
+          },
+          {
+            "text": "Do you provide housekeeping services?"
+          },
+          {
+            "text": "How often are the rooms cleaned?"
+          }
+        ]
+      },
+      {
+        "intent": "action_13697_intent_12109",
+        "examples": [
+          {
+            "text": "What do I need for admission?"
+          },
+          {
+            "text": "Can you explain the admission process?"
+          },
+          {
+            "text": "What is the procedure for hospital admission?"
+          },
+          {
+            "text": "How can I get admitted to the hospital?"
+          },
+          {
+            "text": "Is there an admission fee?"
+          },
+          {
+            "text": "What are the requirements for hospital admission?"
+          },
+          {
+            "text": "How do I schedule an admission?"
+          },
+          {
+            "text": "Are there any forms I need to fill out for admission?"
+          },
+          {
+            "text": "How do I check into the hospital?"
+          }
+        ]
+      },
+      {
+        "intent": "action_12425_intent_28079",
+        "examples": [
+          {
+            "text": "friday"
+          },
+          {
+            "text": "thursday"
+          },
+          {
+            "text": "tuesday"
+          },
+          {
+            "text": "monday"
+          },
+          {
+            "text": "wednesday"
+          },
+          {
+            "text": "when is your hospital close"
+          },
+          {
+            "text": "saturday"
+          },
+          {
+            "text": "hospital on sunday"
+          },
+          {
+            "text": "when is your hospital open"
+          },
+          {
+            "text": "is your hospital open in everytime"
+          },
+          {
+            "text": "date"
+          },
+          {
+            "text": "what are the hospital timings?"
+          }
+        ]
+      },
+      {
+        "intent": "action_37579_intent_43051",
+        "examples": [
+          {
+            "text": "How can I get immediate help for an emergency?"
+          },
+          {
+            "text": "Are emergency services available 24/7?"
+          },
+          {
+            "text": "What should I do in case of a medical emergency?"
+          },
+          {
+            "text": "Can you provide details on emergency protocols?"
+          },
+          {
+            "text": "Is there an emergency helpline available?"
+          },
+          {
+            "text": "How do I get admitted in case of an emergency?"
+          },
+          {
+            "text": "What are the hours for emergency services?"
+          },
+          {
+            "text": "Where is the emergency department located?"
+          },
+          {
+            "text": "How can I reach emergency services at your hospital?"
+          },
+          {
+            "text": "What is your hospital's emergency contact number?"
+          }
+        ]
+      },
+      {
+        "intent": "action_36864_intent_27233",
+        "examples": [
+          {
+            "text": "Nice, thanks!"
+          },
+          {
+            "text": "Super helpful"
+          },
+          {
+            "text": "Great, I appreciate it"
+          },
+          {
+            "text": "That was very useful"
+          },
+          {
+            "text": "Thanks for the assistance!"
+          },
+          {
+            "text": "Perfect, thanks!"
+          },
+          {
+            "text": "Excellent help!"
+          },
+          {
+            "text": "great"
+          },
+          {
+            "text": "good"
+          },
+          {
+            "text": "Fantastic, this helped a lot!"
+          },
+          {
+            "text": "Very informative, thank you!"
+          },
+          {
+            "text": "Awesome service, thanks!"
+          },
+          {
+            "text": "Thanks, you helped me"
+          }
+        ]
+      },
+      {
+        "intent": "action_41626_intent_26586",
+        "examples": [
+          {
+            "text": "What is this service?"
+          },
+          {
+            "text": "Are you a real person?"
+          },
+          {
+            "text": "Who are you?"
+          },
+          {
+            "text": "What do you do?"
+          },
+          {
+            "text": "Can you tell me about yourself?"
+          },
+          {
+            "text": "Who am I speaking with?"
+          },
+          {
+            "text": "What is your role here?"
+          },
+          {
+            "text": "Can you introduce yourself?"
+          },
+          {
+            "text": "What is your name?"
+          },
+          {
+            "text": "How can you help me?"
+          },
+          {
+            "text": "what is your role?"
+          },
+          {
+            "text": "Who is assisting me?"
+          }
+        ]
+      },
+      {
+        "intent": "action_19587_intent_45913",
+        "examples": [
+          {
+            "text": "What are the hospital policies regarding visitors and appointments?"
+          },
+          {
+            "text": "What are the guidelines for patient behavior and safety?"
+          },
+          {
+            "text": "Are there any restrictions or rules for patients and visitors?"
+          },
+          {
+            "text": "What are the hospital's guidelines for appointments and conduct?"
+          },
+          {
+            "text": "What should I know about hospital rules before my visit?"
+          },
+          {
+            "text": "Can you provide information on the hospital's policies?"
+          },
+          {
+            "text": "Are there any specific regulations I should be aware of?"
+          },
+          {
+            "text": "What are the hospital guidelines I need to follow?"
+          },
+          {
+            "text": "Can you tell me the rules for visiting the hospital?"
+          },
+          {
+            "text": "What are the hospital's rules and regulations?"
+          }
+        ]
+      },
+      {
+        "intent": "action_4020_intent_22760",
+        "examples": [
+          {
+            "text": "What are the operating hours for the mortuary?"
+          },
+          {
+            "text": "Do you have a mortuary service?"
+          },
+          {
+            "text": "Is there a mortuary facility at your hospital?"
+          },
+          {
+            "text": "How can I access mortuary services?"
+          },
+          {
+            "text": "What mortuary services do you provide?"
+          },
+          {
+            "text": "Are there any special procedures for mortuary services?"
+          },
+          {
+            "text": "Do you offer cremation or burial services?"
+          },
+          {
+            "text": "How do you handle arrangements for deceased patients?"
+          },
+          {
+            "text": "Is there an associated fee for mortuary services?"
+          },
+          {
+            "text": "Can I view the deceased at your facility?"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_41474",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Hyderabad",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Chennai",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Vijayawada",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Vishakapatnam",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-date",
+        "values": []
+      },
+      {
+        "entity": "entity_2067",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Dr. V. Srinivas Reddy",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dr. P. Subbarao",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dr. V. Naga Lakshmi",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dr. Shashank Anand",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dr. Lavanya",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dr. K. K. Agarwal",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      },
+      {
+        "entity": "entity_41754",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Next Available Slot",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Within Next 15 days",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Within Next 7 days",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_3605",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Yes, I am!",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Nope, this is the first time",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_30538",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Emergency Medicine",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dermatology",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Cardiology",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "ENT (Ear, Nose, and Throat)",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Orthopedics",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Gynecology",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "General Medicine",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_22140",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Email",
+            "patterns": [
+              "\\b(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[A-Za-z0-9-]*[A-Za-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])\\b"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_5451",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Follow-up visit",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "First Visit",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_6366",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Male",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Female",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Prefer Not to say",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      },
+      "skill": {
+        "counts": {
+          "actions": 28,
+          "intents": 25,
+          "entities": 13,
+          "data_types": 0,
+          "collections": 0,
+          "global_variables": 0
+        }
+      }
+    },
+    "variables": [],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "I'm sorry, I did not catch that, please confirm."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Do you want to continue with the previous topic: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": {
+                      "input": {
+                        "text": "Yes"
+                      }
+                    }
+                  },
+                  {
+                    "label": "No",
+                    "value": {
+                      "input": {
+                        "text": "No"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "slot_filling": {
+          "enabled": false
+        }
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "search_routing": {
+        "target": "conversational_search"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false,
+    "language": "en"
+  },
+  "description": "created for assistant 2a9fb6d4-e30b-4baf-8f5f-6f8983cc75f8",
+  "dialog_settings": {
+    "source_assistant": "0391a4f5-f7d2-4311-b5ec-f33fc8651d09"
+  },
+  "created": "2024-07-30T12:57:40.231Z",
+  "updated": "2024-07-30T12:57:40.231Z",
+  "snapshot": "2",
+  "assistant_id": "2a9fb6d4-e30b-4baf-8f5f-6f8983cc75f8",
+  "assistant_references": [
+    {
+      "name": "MediBooker",
+      "assistant_id": "0391a4f5-f7d2-4311-b5ec-f33fc8651d09",
+      "skill_reference": "actions skill"
+    }
+  ]
+}
