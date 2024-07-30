@@ -21,6 +21,9 @@ Experience MediQuery in action:
 2. **Start a Conversation:** Type your query related to hospital services, details, or appointments into the chat interface.
 3. **Receive Information:** MediQuery will process your query and provide relevant information or direct you to the appropriate department or service.
 
+![Chatbot Image 1](https://github.com/user-attachments/assets/a03dc9b0-ba56-4188-a269-841bb93e0d70)
+![Chatbot Image 2](https://github.com/user-attachments/assets/1b8d3a82-45cb-44a8-af05-74a250504fd5)
+
 ## Usage
 - **Interactive Queries:** Simply type your question related to hospital services, details, or appointments to get relevant information.
 - **User-Friendly:** The chatbot is designed to provide clear and concise responses, making it easy for users to get the information they need quickly.
